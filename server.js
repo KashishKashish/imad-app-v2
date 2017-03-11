@@ -1,12 +1,12 @@
-var express = require('express');
-var morgan = require('morgan');
+var express = require('express'); // library to create the webservers
+var morgan = require('morgan'); // to output logs to the server
 var path = require('path');
 
 var app = express();
 app.use(morgan('combined'));
-
+ //line 8,12,16 handles specific urls
 app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'index.html'));
+  res.sendFile(path.join(__dirname, 'ui', 'index.html')); // we send the content of the file
 });
 
 app.get('/ui/style.css', function (req, res) {
